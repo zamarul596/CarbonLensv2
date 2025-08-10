@@ -24,6 +24,10 @@
     "web-vitals": "^2.1.4",
     "xlsx": "^0.18.5"
   },
+    "overrides": {
+    "react-router-dom": "6.27.0",
+    "react-router": "6.27.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
