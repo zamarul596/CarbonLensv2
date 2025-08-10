@@ -1,0 +1,693 @@
+/* Add these styles at the beginning of the file */
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+/* Subscription Plans Page Styles */
+.subscription-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Helvetica Neue', Arial, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animated Background Decorations */
+.subscription-bg-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(46, 204, 122, 0.1), rgba(39, 174, 96, 0.05));
+  animation: floatCircle 12s ease-in-out infinite;
+}
+
+.circle-1 {
+  width: 200px;
+  height: 200px;
+  top: 20%;
+  left: -50px;
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: -75px;
+  animation-delay: 4s;
+}
+
+.circle-3 {
+  width: 120px;
+  height: 120px;
+  bottom: 10%;
+  left: 20%;
+  animation-delay: 8s;
+}
+
+@keyframes floatCircle {
+  0%, 100% { transform: translateY(0px) scale(1); opacity: 0.3; }
+  50% { transform: translateY(-30px) scale(1.1); opacity: 0.6; }
+}
+
+/* Header */
+.subscription-header {
+  background: white;
+  border-bottom: 1px solid #e9ecef;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.subscription-logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #2ecc7a;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.subscription-logo:hover {
+  transform: scale(1.05);
+}
+
+.subscription-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.subscription-nav a {
+  text-decoration: none;
+  color: #495057;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.subscription-nav a:hover {
+  color: #2ecc7a;
+}
+
+/* Update subscription-main padding */
+.subscription-main {
+  padding-top: 100px; /* Increased padding to account for fixed header */
+  flex: 1;
+  background: linear-gradient(to bottom, #f9fafb, #f3f4f6);
+}
+
+.plans-hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #2ecc7a 0%, #27ae60 100%);
+  margin-bottom: 2rem;
+}
+
+.plans-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.plans-hero p {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.demo-btn {
+  background: white;
+  color: #2ecc7a;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.demo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Billing Toggle */
+.billing-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  max-width: fit-content;
+}
+
+.billing-toggle span {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.billing-toggle span.active {
+  color: #2ecc7a;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  background: #e5e7eb;
+  border-radius: 12px;
+  padding: 2px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-switch:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(46, 204, 122, 0.2);
+}
+
+.toggle-slider {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggle-slider.annual {
+  transform: translateX(24px);
+  background: #2ecc7a;
+}
+
+.save-badge {
+  background: #fef3c7;
+  color: #d97706;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+/* Pricing Section */
+.pricing-section {
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.pricing-section h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 3rem;
+}
+
+/* Pricing Cards */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: #2ecc7a;
+}
+
+.pricing-card.popular {
+  border-color: #2ecc7a;
+  transform: scale(1.05);
+}
+
+.pricing-card.selected {
+  border: 2px solid #2ecc7a;
+  box-shadow: 0 8px 16px rgba(46, 204, 122, 0.1);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background: #2ecc7a;
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.plan-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+  color: #111827;
+}
+
+.price .currency {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.price .amount {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.price .period {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  flex-grow: 1;
+}
+
+.features-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.check-icon {
+  color: #2ecc7a;
+  font-weight: bold;
+}
+
+.choose-plan-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #2ecc7a, #27ae60);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.choose-plan-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(46, 204, 122, 0.3);
+}
+
+/* Feature Comparison */
+.feature-comparison {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-comparison h2 {
+  text-align: center;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2rem;
+}
+
+.comparison-table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-header {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  background: #f9fafb;
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.comparison-header > div {
+  padding: 1rem;
+  text-align: center;
+}
+
+.feature-column {
+  font-weight: 600;
+  color: #111827;
+}
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.comparison-row:last-child {
+  border-bottom: none;
+}
+
+.comparison-row > div {
+  padding: 1rem;
+  text-align: center;
+}
+
+.feature-name {
+  color: #4b5563;
+}
+
+.feature-value {
+  text-align: center;
+  color: #111827;
+}
+
+/* Plan & Payment Section */
+.plan-payment-section {
+  padding: 3rem 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.plan-payment-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+.plan-payment-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.current-plan-card,
+.payment-details-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.current-plan-card h3,
+.payment-details-card h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.plan-details {
+  margin-bottom: 2rem;
+}
+
+.plan-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.plan-label {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.plan-value {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.manage-subscription-btn,
+.update-payment-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #6c757d, #495057);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.update-payment-btn {
+  background: linear-gradient(135deg, #2ecc7a, #27ae60);
+}
+
+.manage-subscription-btn:hover,
+.update-payment-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Payment Form */
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.payment-form label {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.payment-form input {
+  padding: 0.8rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.payment-form input:focus {
+  outline: none;
+  border-color: #2ecc7a;
+}
+
+/* Footer */
+.subscription-footer {
+  text-align: center;
+  padding: 2rem;
+  color: #6c757d;
+  background: white;
+  border-top: 1px solid #e9ecef;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .pricing-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .pricing-card.popular {
+    transform: none;
+  }
+  
+  .plan-payment-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .comparison-header,
+  .comparison-row {
+    grid-template-columns: 1.5fr repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .pricing-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .pricing-card.popular {
+    transform: none;
+  }
+  
+  .plan-payment-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .comparison-header,
+  .comparison-row {
+    grid-template-columns: 1.5fr repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .subscription-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .subscription-nav {
+    gap: 1rem;
+  }
+  
+  .plans-hero {
+    padding: 3rem 1rem;
+  }
+
+  .plans-hero h1 {
+    font-size: 2rem;
+  }
+
+  .pricing-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .comparison-table {
+    display: none; /* Hide comparison table on mobile */
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .floating-circle {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .subscription-container {
+    padding: 0;
+  }
+  
+  .plans-hero {
+    padding: 2rem 1rem;
+  }
+  
+  .pricing-section,
+  .feature-comparison,
+  .plan-payment-section {
+    padding: 2rem 1rem;
+  }
+  
+  .pricing-card {
+    padding: 1rem;
+    min-height: auto;
+  }
+  
+  .plan-header h3 {
+    font-size: 1.25rem;
+  }
+  
+  .price .amount {
+    font-size: 2.5rem;
+  }
+  
+  .features-list li {
+    font-size: 0.875rem;
+    padding: 0.5rem 0;
+  }
+  
+  .comparison-header,
+  .comparison-row {
+    grid-template-columns: 1fr;
+    text-align: center !important;
+  }
+  
+  .comparison-header .feature-column,
+  .feature-name {
+    text-align: center !important;
+  }
+  
+  .current-plan-card,
+  .payment-details-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .plans-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .billing-toggle {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+} 

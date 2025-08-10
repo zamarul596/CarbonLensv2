@@ -1,0 +1,53 @@
+/* Shared Header Styles */
+.app-header {
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.app-logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  max-width: none;
+  margin-right: -4px; /* Adjust spacing between logo and text */
+}
+
+.app-logo span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 1rem;
+  }
+
+  .app-logo img {
+    height: 28px;
+  }
+
+  .app-logo span {
+    font-size: 1.25rem;
+  }
+} 
